@@ -4,15 +4,20 @@ from django.views import View
 from django.views.generic.base import TemplateView
 # from django.http import HttpResponse
 # from django.conf import settings as conf_settings
+from data import *
+import random
+
+
+# class MyBaseView(TemplateView):
 
 
 class MainView(TemplateView):
     template_name = "index.html"
-    '''
+
     def get(self, request, *args, **kwargs):
-        html = conf_settings.TEMPLATE_DIR
-        return HttpResponse(html)
-    '''
+        data = {"title": title, "subtitle": subtitle, "description": description,
+                "departures": departures, "tours": random.sample(list(tours.items()), 6)}  # tours
+        return render(request, self.template_name, data)
 
 
 class DepartureView(TemplateView):
