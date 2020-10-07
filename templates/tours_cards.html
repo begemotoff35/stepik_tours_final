@@ -1,0 +1,19 @@
+{% block tours_cards %}
+<div class="row mt-5">
+  {% for tour_id, tour in tours %}
+  <div class="col-4">
+    <div class="card mb-4">
+      <div class="embed-responsive embed-responsive-16by9">
+         <img class="card-img-top embed-responsive-item" src="{{ tour.picture }}" alt="" />
+      </div>
+      <div class="card-body">
+        <h2 class="h5 card-title">{{ tour.country }} - {{ tour.title }} - {{ tour.stars }}★</h2>
+        <p class="card-text">{{ tour.description }}</p>
+        <h2 class="h6 card-title">{% if show_departure == True %}{{ tour.departure }} - {% endif%}{{ tour.date }}, {{ tour.nights }} ночей, {{ tour.price }} Р</h2>
+        <a href="/{{ tour.departure }}/{{ tour_id }}/" class="btn btn-sm btn-primary">Подробнее</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
