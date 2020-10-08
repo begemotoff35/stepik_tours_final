@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 # from django.http import HttpResponse
 from django.http import Http404
-from data import *
+from tours.data import *
 import random
 
 
