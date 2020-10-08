@@ -30,7 +30,7 @@ class MyBaseView(TemplateView):
 
 
 class MainView(TemplateView):
-    template_name = "index.html"
+    template_name = "tours/index.html"
 
     def get(self, request, *args, **kwargs):
         # Каждый раз получаем случайные карточки:
@@ -45,7 +45,7 @@ class MainView(TemplateView):
 
 
 class DepartureView(MyBaseView):
-    template_name = "departure.html"
+    template_name = "tours/departure.html"
 
     def get_context_data(self, **kwargs):
         context = super(DepartureView, self).get_context_data(**kwargs)
@@ -90,7 +90,7 @@ class DepartureView(MyBaseView):
 
 
 class TourView(MyBaseView):
-    template_name = "tour.html"
+    template_name = "tours/tour.html"
 
     def get_context_data(self, **kwargs):
         context = super(TourView, self).get_context_data(**kwargs)
@@ -112,4 +112,4 @@ class TourView(MyBaseView):
 
 class TestView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'test.html', {'name': 'Александр', 'place': 'Мурино'})
+        return render(request, 'tours/test.html', {'name': 'Александр', 'place': 'Мурино'})
