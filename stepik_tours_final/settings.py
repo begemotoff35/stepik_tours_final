@@ -28,7 +28,7 @@ STATIC_ROOT = 'static'
 SECRET_KEY = 't6(vp4k!_&(ae&11!p#i(37)n36w3kz(c_!i76#@1gq3atvlez'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']  # 'localhost', '127.0.0.1'
 
