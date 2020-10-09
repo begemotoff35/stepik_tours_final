@@ -1,10 +1,10 @@
 {% extends "tours/base.html" %}
 {% block content %}
   <main class="container mt-3">
-    <h1 class="display-5 mt-4">Летим {{ departure_name_low }}</h1>
+    <h1 class="display-5">Летим {{ departure_name_low }}</h1>
     <p class="mb-4">{{ departure_info }}</p>
     <!-- CARDS -->
-    <div class="row mt-5">
+    <div class="row">
       {% for tour_id, tour in tours %}
       <div class="col-4">
         <div class="card mb-4">

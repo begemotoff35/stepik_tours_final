@@ -2,14 +2,21 @@
 {% block content %}
   <main class="container">
     <section class="mt-3 pb-5">
-      <h1 class="display-3 mt-4">{{ tour.title }} <font color="#ffcc00">{{ tour_stars }}</font></h1>
-      <!-- HERO -->
-      <p class="lead">{{ tour.country }}, {{ tour.nights }} ночей, {{ tour.date }}, вылет {{ departure_name_low }} </p>
-      <div class="w-75">
-      <img src="{{ tour.picture }}" alt="">
-      <p class="my-4">{{ tour.description }}</p>
-      <a href="https://yandex.ru/search/?text={{ tour.country }} купить тур {{ departure_name_low }}&clid=2270455&win=387&lr=118936&noreask=1&nomisspell=1" class="btn btn-success btn-lg btn-block" target="_blank">Купить тур за {{ tour.price }} ₽</a>
-      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-9">
+          <div class="card mx-auto">
+            <div class="card-header">
+             <h1 class="display-4 mt-1">{{ tour.title }} <font color="#ffcc00">{{ tour_stars }}</font></h1>
+              <p class="lead">{{ tour.country }}, {{ tour.nights }} ночей, {{ tour.date }}, вылет {{ departure_name_low }} </p>
+            </div>
+            <div class="card-body text-center">
+              <img class="card-img" src="{{ tour.picture }}" alt="">
+              <div class="card-footer">{{ tour.description }}</div>
+              <a href="https://yandex.ru/search/?text={{ tour.country }} купить тур {{ departure_name_low }}&clid=2270455&win=387&lr=118936&noreask=1&nomisspell=1" class="btn btn-success btn-lg btn-block" target="_blank">Купить тур за {{ tour.price }} ₽</a>
+            </div>
+          </div>
+          </div>
+        </div>
     </section>
   </main>
 {% endblock content %}

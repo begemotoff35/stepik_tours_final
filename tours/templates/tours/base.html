@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="container mt-3">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="/">{{ title }}
         <img src="{{ MEDIA_URL }}airplane3x_32x32.png" width="32" height="32" class="d-inline-block align-top" alt="">
       </a>
@@ -18,13 +18,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           {% for link, link_name in departures.items %}
-          <li class="nav-item {% if request.path == '/departure/'|add:link|add:'/' %}active{% endif %}">
+          <li class="nav-item {% if request.path == '/departure/'|add:link|add:'/' or departure == link %}active{% endif %}">
             <a class="nav-link" href="/departure/{{ link }}/">{{ link_name }}</a>
           </li>
           {% endfor %}
         </ul>
       </div>
     </nav>
+      <section class="pb-5"></section>
   </header>
 {% block content %}
 <p>base.html</p>

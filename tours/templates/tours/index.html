@@ -2,13 +2,19 @@
 {% block content %}
   <main class="container mt-3">
     <!-- HERO -->
-    <section class="jumbotron text-center mt-4" style="background: url('{{ MEDIA_URL }}scale_1200.webp'); background-position: center center;">
-      <h1 class="display-4">Всякие туры</h1>
-      <p class="lead">{{ subtitle }}</p>
-      <p class="mt-5 w-50 mx-auto">{{ description }}</p>
+    <section class="jumbotron text-white rgba-stylish-strong align-self-end"" style="background: url('{{ MEDIA_URL }}scale_1200.webp'); background-position: center;">
+      <div class="row mt-5">
+        <div class="col-7">
+          <h1 class="display-4 mt-4">Всякие туры</h1>
+          <p class="lead">{{ subtitle }}</p>
+        </div>
+        <div class="col-5 align-self-end">
+          <div class="mt-5 text-right">{{ description }}</div>
+        </div>
+      </div>
     </section>
     <!-- CARDS -->
-    <div class="row mt-5">
+    <div class="row">
       {% for tour_id, tour in tours %}
       <div class="col-4">
         <div class="card mb-4">
